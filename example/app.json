@@ -1,0 +1,17 @@
+{
+  "name": "react-native-lucky-wheel-example",
+  "displayName": "Lucky Wheel Example",
+  "expo": {
+    "name": "react-native-lucky-wheel-example",
+    "slug": "react-native-lucky-wheel-example",
+    "description": "Example app for react-native-lucky-wheel",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": ["ios", "android", "web"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "assetBundlePatterns": ["**/*"],
+    "githubUrl": "https://github.com/ridvanaltun/react-native-lucky-wheel/tree/master/example"
+  }
+}

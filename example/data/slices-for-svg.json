@@ -1,0 +1,16 @@
+[
+  {
+    "text": "foo",
+    "color": "red",
+    "textStyle": {
+      "color": "yellow",
+      "fontFamily": "monospace"
+    }
+  },
+  { "text": "bar" },
+  { "text": "baz" },
+  { "text": "qux" },
+  { "text": "quux" },
+  { "text": "corge" },
+  { "text": "grault" }
+]

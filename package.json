@@ -1,0 +1,167 @@
+{
+  "name": "react-native-lucky-wheel",
+  "title": "React Native Lucky Wheel",
+  "version": "0.0.0",
+  "description": "Lucky Wheel for React Native.",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "types": "lib/typescript/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "README.md",
+    "src",
+    "lib",
+    "!example",
+    "!lib/typescript/example"
+  ],
+  "scripts": {
+    "test": "jest --passWithNoTests",
+    "prepare": "bob build",
+    "release": "release-it",
+    "typescript": "tsc --noEmit",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "example": "yarn --cwd example",
+    "bootstrap": "yarn example && yarn",
+    "commit": "git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ridvanaltun/react-native-lucky-wheel.git",
+    "baseUrl": "https://github.com/ridvanaltun/react-native-lucky-wheel"
+  },
+  "keywords": [
+    "react-native",
+    "lucky-wheel",
+    "fortune-of-wheel",
+    "wheel"
+  ],
+  "author": {
+    "name": "Rıdvan Altun",
+    "email": "ridvanaltun@outlook.com"
+  },
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react": ">=16.8.1",
+    "react-native": ">=0.60.0-rc.0 <1.0.x",
+    "react-native-svg": ">=12.x"
+  },
+  "dependencies": {
+    "d3-shape": "^3.1.0",
+    "prop-types": "^15.8.1",
+    "randomcolor": "^0.6.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.1",
+    "@commitlint/config-conventional": "^17.0.0",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@release-it/conventional-changelog": "^5.0.0",
+    "@types/d3-shape": "^3.1.0",
+    "@types/jest": "^27.5.1",
+    "@types/randomcolor": "^0.5.6",
+    "@types/react": "18.0.0",
+    "@types/react-native": "0.66.1",
+    "auto-changelog": "^2.4.0",
+    "commitizen": "^4.2.4",
+    "commitlint": "^17.0.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "husky": "^4.3.8",
+    "jest": "^28.1.0",
+    "prettier": "^2.6.2",
+    "react": "18.0.0",
+    "react-native": "0.66.1",
+    "react-native-builder-bob": "^0.18.2",
+    "react-native-svg": "^12.4.3",
+    "release-it": "^15.0.0",
+    "typescript": "^4.7.2"
+  },
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn lint && yarn typescript"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@react-native-community",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "quoteProps": "consistent",
+          "singleQuote": true,
+          "tabWidth": 2,
+          "trailingComma": "es5",
+          "useTabs": false
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/",
+    "*.js"
+  ],
+  "prettier": {
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version} [ci skip]",
+      "tagName": "v${version}",
+      "changelog": "auto-changelog --stdout --unreleased --template ./templates/release-template.hbs"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  }
+}
