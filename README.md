@@ -7,7 +7,7 @@
 
 > A decent lucky wheel component for React-Native
 
-It's sucks that writing a lucky wheel (known as `fortune of wheel`) component. I wrote one, so you wouldn't have to.
+It's sucks that writing a lucky wheel (known as `wheel of fortune`) component. I wrote one, so you wouldn't have to.
 
 # Table of Contents <!-- omit in toc -->
 
