@@ -114,6 +114,10 @@ export interface ILuckyWheel
   extends ILuckyWheelRequiredProps,
     ILuckyWheelOptionalProps {}
 
-export type LuckyWheelHandle = {};
+export type LuckyWheelHandle = {
+  start: (cb?: () => void) => void;
+  stop: () => void;
+  reset: () => void;
+};
 
 export default LuckyWheel;

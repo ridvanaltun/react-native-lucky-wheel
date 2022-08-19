@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React, { useRef, useState } from 'react';
 import {
   View,
@@ -7,12 +9,15 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import LuckyWheel from 'react-native-lucky-wheel';
+import LuckyWheel, {
+  GestureTypes,
+  LuckyWheelHandle,
+} from 'react-native-lucky-wheel';
 
 const App = () => {
-  const wheelRef = useRef(null);
+  const wheelRef = useRef<LuckyWheelHandle>(null);
 
-  const [winnerIndex, setWinnerIndex] = useState(null);
+  const [winnerIndex, setWinnerIndex] = useState<number | undefined>(undefined);
   const [isImageMode, setIsImageMode] = useState(false);
   const [isEndlessSpinningOn, setIsEndlessSpinningOn] = useState(true);
 
@@ -38,12 +43,11 @@ const App = () => {
         knobColor="#000"
         padAngle={0}
         dotColor="#FFF"
-        outerRingColor="#000"
         backgroundColor="#F00"
         source={isImageMode ? require('./assets/wheel.png') : null}
         enableGesture
         minimumSpinVelocity={1} // 0.0 - 1.0
-        gestureType="clockwise"
+        gestureType={GestureTypes.CLOCKWISE}
         waitWinner={isEndlessSpinningOn}
       />
       <View style={styles.buttons}>
@@ -56,21 +60,21 @@ const App = () => {
         <View style={styles.separator} />
         <Button
           onPress={() => {
-            wheelRef.current.start();
+            wheelRef?.current?.start();
           }}
           title="Start"
         />
         <View style={styles.separator} />
         <Button
           onPress={() => {
-            wheelRef.current.stop();
+            wheelRef?.current?.stop();
           }}
           title="Stop"
         />
         <View style={styles.separator} />
         <Button
           onPress={() => {
-            wheelRef.current.reset();
+            wheelRef?.current?.reset();
           }}
           title="Reset"
         />
@@ -84,7 +88,7 @@ const App = () => {
         <View style={styles.separator} />
         <Button
           onPress={() => {
-            setWinnerIndex(null);
+            setWinnerIndex(undefined);
           }}
           title="Remove Winner"
         />
