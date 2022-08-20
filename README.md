@@ -87,6 +87,7 @@ The `<LuckyWheel>` component can take a number of inputs to customize it as need
 | customKnob             | (params: ICustomKnob) => React.ReactChild |    -     |                  -                  |
 | customText             | (params: IWheelText) => React.ReactChild  |    -     |                  -                  |
 | waitWinner             | boolean                                   |    -     |                false                |
+| enableInnerShadow      | boolean                                   |    -     |                true                 |
 
 ### Methods
 

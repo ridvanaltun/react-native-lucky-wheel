@@ -406,6 +406,8 @@ const LuckyWheel = forwardRef<LuckyWheelHandle, ILuckyWheel>((props, ref) => {
   };
 
   const _renderCircle = () => {
+    if (!props.enableInnerShadow) return false;
+
     return (
       <Animated.View
         style={{
@@ -550,6 +552,7 @@ const defaultProps: ILuckyWheelOptionalProps = {
   gestureType: GestureTypes.CLOCKWISE,
   offset: 0,
   waitWinner: false,
+  enableInnerShadow: true,
 };
 
 LuckyWheel.defaultProps = defaultProps;

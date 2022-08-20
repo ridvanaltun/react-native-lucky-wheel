@@ -108,6 +108,7 @@ export interface ILuckyWheelOptionalProps {
   customKnob?: (params: ICustomKnob) => React.ReactChild;
   customText?: (params: IWheelText) => React.ReactChild;
   waitWinner: boolean;
+  enableInnerShadow: boolean;
 }
 
 export interface ILuckyWheel
