@@ -88,7 +88,7 @@ export interface ILuckyWheelOptionalProps {
   duration: number;
   enableGesture: boolean;
   enablePhysics: boolean;
-  enableOuterRing: boolean;
+  enableOuterDots: boolean;
   gestureType: GestureType;
   size: number;
   winnerIndex?: number;

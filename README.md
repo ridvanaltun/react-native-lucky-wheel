@@ -67,7 +67,7 @@ The `<LuckyWheel>` component can take a number of inputs to customize it as need
 | duration               | number                                    |    -     |                  4                  |
 | enableGesture          | boolean                                   |    -     |                false                |
 | enablePhysics          | boolean                                   |    -     |                false                |
-| enableOuterRing        | boolean                                   |    -     |                true                 |
+| enableOuterDots        | boolean                                   |    -     |                true                 |
 | gestureType            | GestureType                               |    -     |       GestureTypes.CLOCKWISE        |
 | size                   | number                                    |    -     |             width - 40              |
 | winnerIndex            | number                                    |    -     |                  -                  |

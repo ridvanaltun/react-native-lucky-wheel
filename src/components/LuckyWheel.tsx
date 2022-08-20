@@ -383,8 +383,8 @@ const LuckyWheel = forwardRef<LuckyWheelHandle, ILuckyWheel>((props, ref) => {
     );
   };
 
-  const _renderOuterRing = (x: number, y: number, i: number) => {
-    if (!props.enableOuterRing) {
+  const _renderOuterDots = (x: number, y: number, i: number) => {
+    if (!props.enableOuterDots) {
       return null;
     }
 
@@ -504,7 +504,7 @@ const LuckyWheel = forwardRef<LuckyWheelHandle, ILuckyWheel>((props, ref) => {
                 <G key={`arc-${i}`}>
                   {_renderSlice(payload.path, payload.color)}
                   {_renderText({ x, y, payload, i })}
-                  {_renderOuterRing(x, y, i)}
+                  {_renderOuterDots(x, y, i)}
                 </G>
               );
             })}
@@ -552,7 +552,7 @@ const defaultProps: ILuckyWheelOptionalProps = {
   dotColor: '#000',
   minimumSpinVelocity: 1,
   enableGesture: false,
-  enableOuterRing: true,
+  enableOuterDots: true,
   enablePhysics: false,
   gestureType: GestureTypes.CLOCKWISE,
   offset: 0,
