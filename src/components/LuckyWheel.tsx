@@ -58,6 +58,11 @@ const LuckyWheel = forwardRef<LuckyWheelHandle, ILuckyWheel>((props, ref) => {
     outputRange: [`-${ONE_TURN}deg`, '0deg', `${ONE_TURN}deg`],
   });
 
+  const outerRadius = useMemo(
+    () => props.size / 2 - props.outerRadius,
+    [props.size, props.outerRadius]
+  );
+
   const DURATION_IN_MS = useMemo(() => props.duration * 1000, [props.duration]);
 
   const SLICE_COUNT = useMemo(() => props.slices.length, [props.slices]);
@@ -71,7 +76,7 @@ const LuckyWheel = forwardRef<LuckyWheelHandle, ILuckyWheel>((props, ref) => {
     const instance = d3Shape
       .arc()
       .padAngle(props.padAngle)
-      .outerRadius(props.outerRadius)
+      .outerRadius(outerRadius)
       .innerRadius(props.innerRadius);
 
     const colors = randomColor({
@@ -91,7 +96,7 @@ const LuckyWheel = forwardRef<LuckyWheelHandle, ILuckyWheel>((props, ref) => {
   }, [
     props.padAngle,
     props.innerRadius,
-    props.outerRadius,
+    outerRadius,
     props.backgroundColorOptions,
     props.slices,
     SLICE_COUNT,
@@ -387,7 +392,7 @@ const LuckyWheel = forwardRef<LuckyWheelHandle, ILuckyWheel>((props, ref) => {
       <Circle
         origin={`${x}, ${y}`}
         rotation={(i * ONE_TURN) / SLICE_COUNT + SLICE_ANGLE_CENTER}
-        cx={x + props.outerRadius + 2.5}
+        cx={x + outerRadius + 2.5}
         cy={
           y +
           SLICE_ANGLE -
@@ -413,8 +418,8 @@ const LuckyWheel = forwardRef<LuckyWheelHandle, ILuckyWheel>((props, ref) => {
         style={{
           ...styles.wheel,
           ...styles.circle,
-          width: props.size - (props.size - props.outerRadius * 2),
-          height: props.size - (props.size - props.outerRadius * 2),
+          width: props.size - (props.size - outerRadius * 2),
+          height: props.size - (props.size - outerRadius * 2),
           borderRadius: props.size / 2,
         }}
       />

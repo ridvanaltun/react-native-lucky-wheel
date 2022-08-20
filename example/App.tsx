@@ -37,7 +37,7 @@ const App = () => {
         }}
         size={300}
         innerRadius={0}
-        outerRadius={300 / 2 - 13}
+        outerRadius={13}
         textStyle={styles.text}
         knobSize={30}
         knobColor="#000"
