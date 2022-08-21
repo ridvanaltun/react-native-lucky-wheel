@@ -536,7 +536,7 @@ const LuckyWheel = forwardRef<LuckyWheelHandle, ILuckyWheel>((props, ref) => {
 const defaultProps: ILuckyWheelOptionalProps = {
   duration: 4,
   innerRadius: 30,
-  outerRadius: (width - 40) / 2 - 15,
+  outerRadius: 13,
   padAngle: 0.01,
   backgroundColor: '#FFF',
   size: width - 40,
