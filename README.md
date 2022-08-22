@@ -62,7 +62,7 @@ The `<LuckyWheel>` component can take a number of inputs to customize it as need
 | :--------------------- | :---------------------------------------- | :------: | :---------------------------------: |
 | slices                 | ISlice[]                                  |    +     |                  -                  |
 | padAngle               | number                                    |    -     |                0.01                 |
-| outerRadius            | number                                    |    -     |        (width - 40) / 2 - 15        |
+| outerRadius            | number                                    |    -     |                 13                  |
 | innerRadius            | number                                    |    -     |                 30                  |
 | duration               | number                                    |    -     |                  4                  |
 | enableGesture          | boolean                                   |    -     |                false                |
