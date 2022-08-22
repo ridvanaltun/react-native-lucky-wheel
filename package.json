@@ -1,7 +1,7 @@
 {
   "name": "react-native-lucky-wheel",
   "title": "React Native Lucky Wheel",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Lucky Wheel for React Native.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
