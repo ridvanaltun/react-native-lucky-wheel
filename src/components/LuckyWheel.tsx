@@ -118,6 +118,8 @@ const LuckyWheel = forwardRef<LuckyWheelHandle, ILuckyWheel>((props, ref) => {
   const startSpinning = useCallback(() => {
     setIsSpinning(true);
 
+    if (props.onSpinningStart) props.onSpinningStart();
+
     const isGestureSpinning = spinVelocity._value !== 0;
     const isSpinningValid = Math.abs(spinVelocity._value) >= 1;
     const velocity =

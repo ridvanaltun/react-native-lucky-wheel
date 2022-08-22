@@ -82,6 +82,7 @@ The `<LuckyWheel>` component can take a number of inputs to customize it as need
 | easing                 | EasingType                                |    -     |           EasingTypes.OUT           |
 | dotColor               | Color                                     |    -     |               `#000`                |
 | onKnobTick             | () => void                                |    -     |                  -                  |
+| onSpinningStart        | () => void                                |    -     |                  -                  |
 | onSpinningEnd          | (winner: ISlice) => void                  |    -     |                  -                  |
 | source                 | ImageSourcePropType                       |    -     |                  -                  |
 | customKnob             | (params: ICustomKnob) => React.ReactChild |    -     |                  -                  |

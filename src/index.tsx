@@ -103,6 +103,7 @@ export interface ILuckyWheelOptionalProps {
   easing: EasingType;
   dotColor: Color;
   onKnobTick?: () => void;
+  onSpinningStart?: () => void;
   onSpinningEnd?: (winner: ISlice) => void;
   source?: ImageSourcePropType;
   customKnob?: (params: ICustomKnob) => React.ReactChild;
