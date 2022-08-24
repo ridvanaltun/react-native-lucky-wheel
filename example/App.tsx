@@ -1,18 +1,11 @@
 // @ts-nocheck
 
 import React, { useRef, useState } from 'react';
-import {
-  View,
-  Button,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-} from 'react-native';
+import { View, SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 
-import LuckyWheel, {
-  GestureTypes,
-  LuckyWheelHandle,
-} from 'react-native-lucky-wheel';
+import LuckyWheel, { LuckyWheelHandle } from 'react-native-lucky-wheel';
+
+import Button from './Button';
 
 const App = () => {
   const wheelRef = useRef<LuckyWheelHandle>(null);
@@ -31,23 +24,17 @@ const App = () => {
             ? require('./data/slices-for-image.json')
             : require('./data/slices-for-svg.json')
         }
-        winnerIndex={winnerIndex}
-        onSpinningEnd={(winner) => {
-          console.log('winner ->', winner);
+        onSpinningStart={() => {
+          console.log('onSpinningStart');
+        }}
+        onSpinningEnd={(_winner) => {
+          console.log('onSpinningEnd');
         }}
         size={300}
-        innerRadius={0}
-        outerRadius={13}
-        textStyle={styles.text}
-        knobSize={30}
-        knobColor="#000"
-        padAngle={0}
-        dotColor="#FFF"
-        backgroundColor="#F00"
         source={isImageMode ? require('./assets/wheel.png') : null}
         enableGesture
-        minimumSpinVelocity={1} // 0.0 - 1.0
-        gestureType={GestureTypes.CLOCKWISE}
+        minimumSpinVelocity={0.6} // 0.0 - 1.0
+        winnerIndex={winnerIndex}
         waitWinner={isEndlessSpinningOn}
       />
       <View style={styles.buttons}>
@@ -55,49 +42,46 @@ const App = () => {
           onPress={() => {
             setIsImageMode(!isImageMode);
           }}
-          title="Toggle Mode"
+          title={isImageMode ? 'Switch SVG Mode' : 'Switch Image Mode'}
         />
-        <View style={styles.separator} />
         <Button
           onPress={() => {
             wheelRef?.current?.start();
           }}
           title="Start"
         />
-        <View style={styles.separator} />
         <Button
           onPress={() => {
             wheelRef?.current?.stop();
           }}
           title="Stop"
         />
-        <View style={styles.separator} />
         <Button
           onPress={() => {
             wheelRef?.current?.reset();
           }}
           title="Reset"
         />
-        <View style={styles.separator} />
         <Button
           onPress={() => {
-            setWinnerIndex(1);
+            if (winnerIndex) {
+              setWinnerIndex(undefined);
+            } else {
+              setWinnerIndex(1);
+            }
           }}
-          title="Set Winner 1"
+          title={winnerIndex ? 'Remove Winner' : 'Set Winner 1'}
         />
-        <View style={styles.separator} />
-        <Button
-          onPress={() => {
-            setWinnerIndex(undefined);
-          }}
-          title="Remove Winner"
-        />
-        <View style={styles.separator} />
         <Button
           onPress={() => {
             setIsEndlessSpinningOn(!isEndlessSpinningOn);
           }}
-          title="Toggle Endless Spinning"
+          title={
+            isEndlessSpinningOn
+              ? 'Deactive Endless Spinning'
+              : 'Active Endless Spinning'
+          }
+          style={{ backgroundColor: isEndlessSpinningOn ? 'red' : 'green' }}
         />
       </View>
     </SafeAreaView>
@@ -116,10 +100,6 @@ const styles = StyleSheet.create({
     marginTop: 50,
     flexWrap: 'wrap',
     justifyContent: 'center',
-  },
-  separator: {
-    margin: 10,
-    marginTop: 60,
   },
   text: {
     fontSize: 17,
