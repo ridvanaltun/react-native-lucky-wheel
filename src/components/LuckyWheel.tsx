@@ -30,8 +30,8 @@ import type {
   ILuckyWheelOptionalProps,
   Color,
   IWheelText,
-} from '../index';
-import { GestureTypes, TextAngles, EasingTypes } from '../index';
+} from '../types';
+import { GestureTypes, TextAngles, EasingTypes } from '../types';
 
 const AnimatedSvg = Animated.createAnimatedComponent(Svg);
 

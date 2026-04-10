@@ -2,7 +2,7 @@ import React from 'react';
 
 import Svg, { Path } from 'react-native-svg';
 
-import type { Color } from '../index';
+import type { Color } from '../types';
 
 interface IKnob {
   size: number;
