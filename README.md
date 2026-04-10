@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/react-native-lucky-wheel.svg)](https://npmjs.com/package/react-native-lucky-wheel)
 [![CircleCI](https://circleci.com/gh/ridvanaltun/react-native-lucky-wheel/tree/master.svg?style=shield)](https://circleci.com/gh/ridvanaltun/react-native-lucky-wheel/tree/master)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![license](https://img.shields.io/npm/l/react-native-lucky-wheel.svg)](https://github.com/ridvanaltun/react-native-lucky-wheel/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/ridvanaltun/react-native-lucky-wheel)](https://github.com/ridvanaltun/react-native-lucky-wheel/blob/master/LICENSE)
 
 > A decent lucky wheel component for React-Native
 
