@@ -36,21 +36,27 @@ yarn add react-native-lucky-wheel
 
 ### Dependencies
 
-This library needs these dependencies to be installed in your project before you can use it:
+Install **`react-native-svg`** in your app. This package declares it as a peer dependency with range **`>=12.x`** (see `peerDependencies` in `package.json`). Newer major versions are not capped there; if something breaks on a future major, open an issue.
 
-**For Expo CLI:**
+**Expo**
 
 ```sh
 expo install react-native-svg
 ```
 
-**For React Native CLI**
+(`expo install` picks a version compatible with your SDK.)
+
+**React Native CLI**
 
 ```sh
-yarn add react-native-svg
+yarn add react-native-svg@^12.0.0
+# or
+npm install react-native-svg@^12.0.0
 ```
 
-> **_Check [react-native-svg](https://github.com/react-native-svg/react-native-svg) installation guide._**
+Use **`^12.0.0`** (or any **12+** release) to satisfy the peer range. You may use a newer major if your app already depends on it and the wheel renders correctly.
+
+Follow the upstream guide for native setup: [react-native-svg](https://github.com/react-native-svg/react-native-svg).
 
 ## API
 
