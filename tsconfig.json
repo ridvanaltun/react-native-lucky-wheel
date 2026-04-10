@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "noEmit": true,
     "allowJs": true,
     "baseUrl": "./",
     "paths": {
@@ -24,5 +25,6 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext"
-  }
+  },
+  "exclude": ["example", "lib", "node_modules"]
 }
