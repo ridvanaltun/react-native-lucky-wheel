@@ -24,16 +24,14 @@ import Knob from './Knob';
 
 import Utils from '../utils';
 
-import {
+import type {
   ILuckyWheel,
   LuckyWheelHandle,
-  GestureTypes,
-  TextAngles,
-  EasingTypes,
   ILuckyWheelOptionalProps,
   Color,
   IWheelText,
 } from '../index';
+import { GestureTypes, TextAngles, EasingTypes } from '../index';
 
 const AnimatedSvg = Animated.createAnimatedComponent(Svg);
 

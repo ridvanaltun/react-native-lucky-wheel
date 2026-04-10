@@ -1,11 +1,6 @@
 import React from 'react';
-import {
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  TouchableOpacityProps,
-  TextStyle,
-} from 'react-native';
+import { Text, StyleSheet, TouchableOpacity } from 'react-native';
+import type { TouchableOpacityProps, TextStyle } from 'react-native';
 
 interface IButton extends TouchableOpacityProps {
   title: string;
