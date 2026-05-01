@@ -5,12 +5,20 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![license](https://img.shields.io/github/license/ridvanaltun/react-native-lucky-wheel)](https://github.com/ridvanaltun/react-native-lucky-wheel/blob/master/LICENSE)
 
-> A decent lucky wheel component for React-Native
+> A customizable lucky wheel component for React Native.
 
-It's sucks that writing a lucky wheel (known as `wheel of fortune`) component. I wrote one, so you wouldn't have to.
+Building a lucky wheel (also known as a `wheel of fortune`) component from scratch can be tedious. This library gives you a ready-to-use implementation so you can ship faster.
+
+## Demo Preview
+
+<p align="center">
+  <img src="docs/svg-example.png" alt="SVG wheel example" width="48%" />
+  <img src="docs/image-example.png" alt="Image wheel example" width="48%" />
+</p>
 
 # Table of Contents <!-- omit in toc -->
 
+- [Demo Preview](#demo-preview)
 - [Getting started](#getting-started)
   - [Dependencies](#dependencies)
 - [API](#api)
@@ -137,7 +145,7 @@ You can spin the wheel with two different method:
 
 ### Wheel Types: SVG and Image
 
-There are two different method to create a Lucky Wheel:
+There are two different methods to create a Lucky Wheel:
 
 `@TODO`
 
@@ -155,6 +163,11 @@ There are some libraries to play sound, I don't want to select one, so I decide 
 
 ## Example App
 
+Preview screenshots are available in the [Demo Preview](#demo-preview) section above:
+
+- [SVG wheel example](docs/svg-example.png)
+- [Image wheel example](docs/image-example.png)
+
 ```sh
 # clone the project
 git clone https://github.com/ridvanaltun/react-native-lucky-wheel.git
@@ -162,19 +175,19 @@ git clone https://github.com/ridvanaltun/react-native-lucky-wheel.git
 # go into the project
 cd react-native-lucky-wheel
 
-# make project ready
-npm run bootstrap
+# install dependencies
+yarn install
 
-# go into the example
-cd example
+# run the example (Expo)
+yarn workspace react-native-lucky-wheel-example start
 
 # run for android
-npm run android
+yarn workspace react-native-lucky-wheel-example android
 
 # or
 
 # run for ios
-npm run ios
+yarn workspace react-native-lucky-wheel-example ios
 ```
 
 ## Contributing

@@ -1,17 +1,31 @@
 {
-  "name": "react-native-lucky-wheel-example",
-  "displayName": "Lucky Wheel Example",
   "expo": {
-    "name": "react-native-lucky-wheel-example",
+    "name": "LuckyWheel Example",
     "slug": "react-native-lucky-wheel-example",
-    "description": "Example app for react-native-lucky-wheel",
-    "privacy": "public",
     "version": "1.0.0",
-    "platforms": ["ios", "android", "web"],
-    "ios": {
-      "supportsTablet": true
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
-    "githubUrl": "https://github.com/ridvanaltun/react-native-lucky-wheel/tree/master/example"
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "luckywheel.example"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "package": "luckywheel.example"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
   }
 }

@@ -1,0 +1,34 @@
+[
+  {
+    "text": "10% OFF",
+    "color": "#7c3aed"
+  },
+  {
+    "text": "20% OFF",
+    "color": "#2563eb"
+  },
+  {
+    "text": "FREE SHIP",
+    "color": "#0891b2"
+  },
+  {
+    "text": "TRY AGAIN",
+    "color": "#64748b"
+  },
+  {
+    "text": "MYSTERY",
+    "color": "#db2777"
+  },
+  {
+    "text": "BONUS",
+    "color": "#ea580c"
+  },
+  {
+    "text": "JACKPOT",
+    "color": "#a16207",
+    "textStyle": {
+      "color": "#fef9c3",
+      "fontWeight": "700"
+    }
+  }
+]

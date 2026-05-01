@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Svg, { Path } from 'react-native-svg';
 
 import type { Color } from '../types';
@@ -12,6 +10,7 @@ interface IKnob {
 const Knob = ({ size, color }: IKnob) => {
   return (
     <Svg
+      pointerEvents="none"
       width={size}
       height={(size * 100) / 57}
       viewBox="0 0 57 100"

@@ -1,4 +1,4 @@
-import type { ReactChild } from 'react';
+import type { ReactNode } from 'react';
 import type { ImageSourcePropType } from 'react-native';
 import type { TextProps } from 'react-native-svg';
 
@@ -58,7 +58,7 @@ interface RandomColorOptionsSingle {
   alpha?: number | undefined;
 }
 
-type ISlice = {
+export type ISlice = {
   text: string;
   color?: Color;
   textStyle?: ITextStyle;
@@ -105,15 +105,14 @@ export interface ILuckyWheelOptionalProps {
   onSpinningStart?: () => void;
   onSpinningEnd?: (winner: ISlice) => void;
   source?: ImageSourcePropType;
-  customKnob?: (params: ICustomKnob) => ReactChild;
-  customText?: (params: IWheelText) => ReactChild;
+  customKnob?: (params: ICustomKnob) => ReactNode;
+  customText?: (params: IWheelText) => ReactNode;
   waitWinner: boolean;
   enableInnerShadow: boolean;
 }
 
 export interface ILuckyWheel
-  extends ILuckyWheelRequiredProps,
-    ILuckyWheelOptionalProps {}
+  extends ILuckyWheelRequiredProps, Partial<ILuckyWheelOptionalProps> {}
 
 export type LuckyWheelHandle = {
   start: (cb?: () => void) => void;
