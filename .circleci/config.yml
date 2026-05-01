@@ -101,7 +101,9 @@ jobs:
             ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run:
           name: Publish package
-          command: npm run release -- --ci --yes --no-git.requireCleanWorkingDir
+          command: |
+            export CI=true
+            yes | npm run release -- --ci --yes --no-git.requireCleanWorkingDir
 
 workflows:
   build-and-deploy:
