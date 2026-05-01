@@ -103,7 +103,7 @@ jobs:
           name: Publish package
           command: |
             export CI=true
-            yes | npm run release -- --ci --yes --no-git.requireCleanWorkingDir
+            npm run release -- --ci --yes --no-git.requireCleanWorkingDir
 
 workflows:
   build-and-deploy:
