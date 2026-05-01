@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { ComponentProps, ReactElement, RefObject } from 'react';
 import { View, Text, Modal, StyleSheet, TouchableOpacity } from 'react-native';
 import {
   GestureHandlerRootView,
@@ -8,6 +8,11 @@ import LuckyWheel from 'react-native-lucky-wheel';
 import type { LuckyWheelHandle } from 'react-native-lucky-wheel';
 import { BORDER, CARD_BG, MUTED, PURPLE, TEXT } from '../constants/theme';
 import type { ISlice } from 'react-native-lucky-wheel';
+
+const GestureHandlerRootViewWithChildren =
+  GestureHandlerRootView as unknown as (
+    props: ComponentProps<typeof View>
+  ) => ReactElement | null;
 
 type Props = {
   visible: boolean;
@@ -53,7 +58,7 @@ export default function WheelTestModal({
       transparent
       onRequestClose={onClose}
     >
-      <GestureHandlerRootView style={styles.gestureRoot}>
+      <GestureHandlerRootViewWithChildren style={styles.gestureRoot}>
         <View style={styles.modalBackdrop}>
           <GHPressable
             style={[StyleSheet.absoluteFillObject, styles.backdropDismiss]}
@@ -137,7 +142,7 @@ export default function WheelTestModal({
             </Text>
           </View>
         </View>
-      </GestureHandlerRootView>
+      </GestureHandlerRootViewWithChildren>
     </Modal>
   );
 }

@@ -1,5 +1,9 @@
 import type { MutableRefObject } from 'react';
-import { PanResponder } from 'react-native';
+import {
+  PanResponder,
+  type GestureResponderEvent,
+  type PanResponderGestureState,
+} from 'react-native';
 
 import type { GestureType } from '../../types';
 import { GestureTypes } from '../../types';
@@ -40,7 +44,10 @@ export function createWheelPanResponder({
     onStartShouldSetPanResponderCapture: () => canPan,
     onMoveShouldSetPanResponder: () => canPan,
     onMoveShouldSetPanResponderCapture: () => canPan,
-    onPanResponderMove: (_, gestureState) => {
+    onPanResponderMove: (
+      _: GestureResponderEvent,
+      gestureState: PanResponderGestureState
+    ) => {
       if (!enableGesture || isSpinning) {
         return;
       }

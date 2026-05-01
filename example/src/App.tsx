@@ -1,9 +1,19 @@
 import { useRef, useState, useCallback, useMemo } from 'react';
-import { View, StatusBar, StyleSheet, ScrollView } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {
+  View,
+  StatusBar,
+  StyleSheet,
+  ScrollView,
+  SafeAreaView,
+} from 'react-native';
 import LuckyWheel from 'react-native-lucky-wheel';
 import type { LuckyWheelHandle } from 'react-native-lucky-wheel';
-import { DemoHeader, WinnerBanner, DemoControlsCard, WheelTestModal } from './components';
+import {
+  DemoHeader,
+  WinnerBanner,
+  DemoControlsCard,
+  WheelTestModal,
+} from './components';
 import { DARK_BG } from './constants/theme';
 import {
   IMAGE_SLICES,

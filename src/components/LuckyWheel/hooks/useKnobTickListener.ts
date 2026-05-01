@@ -14,7 +14,7 @@ export function useKnobTickListener(
     if (!onKnobTick) {
       return;
     }
-    const id = knobAnim.addListener(({ value }) => {
+    const id = knobAnim.addListener(({ value }: { value: number }) => {
       if (value > 0.7) onKnobTick();
     });
     return () => {

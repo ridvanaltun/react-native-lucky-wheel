@@ -9,12 +9,14 @@ export function useAnimatedValueMirrors(
   spinVelocityValue: MutableRefObject<number>
 ) {
   useEffect(() => {
-    const rotateId = rotate.addListener(({ value }) => {
+    const rotateId = rotate.addListener(({ value }: { value: number }) => {
       rotateValue.current = value;
     });
-    const velocityId = spinVelocity.addListener(({ value }) => {
-      spinVelocityValue.current = value;
-    });
+    const velocityId = spinVelocity.addListener(
+      ({ value }: { value: number }) => {
+        spinVelocityValue.current = value;
+      }
+    );
     return () => {
       rotate.removeListener(rotateId);
       spinVelocity.removeListener(velocityId);
