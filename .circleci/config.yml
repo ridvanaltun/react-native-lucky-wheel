@@ -3,7 +3,7 @@ version: 2.1
 executors:
   default:
     docker:
-      - image: circleci/node:14
+      - image: cimg/node:24.13
     working_directory: ~/project
 
 commands:
@@ -17,26 +17,24 @@ jobs:
     executor: default
     steps:
       - checkout
-      - attach_project
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "package.json" }}
+            - dependencies-{{ checksum "yarn.lock" }}-{{ checksum "package.json" }}
             - dependencies-
       - restore_cache:
           keys:
-            - dependencies-example-{{ checksum "example/package.json" }}
+            - dependencies-example-{{ checksum "yarn.lock" }}-{{ checksum "example/package.json" }}
             - dependencies-example-
       - run:
           name: Install dependencies
           command: |
-            yarn install --cwd example --frozen-lockfile
-            yarn install --frozen-lockfile
+            yarn install --immutable
       - save_cache:
-          key: dependencies-{{ checksum "package.json" }}
+          key: dependencies-{{ checksum "yarn.lock" }}-{{ checksum "package.json" }}
           paths:
             - node_modules
       - save_cache:
-          key: dependencies-example-{{ checksum "example/package.json" }}
+          key: dependencies-example-{{ checksum "yarn.lock" }}-{{ checksum "example/package.json" }}
           paths:
             - example/node_modules
       - persist_to_workspace:
@@ -60,7 +58,7 @@ jobs:
       - run:
           name: Typecheck files
           command: |
-            yarn typescript
+            yarn typecheck
 
   unit-tests:
     executor: default
@@ -98,7 +96,7 @@ jobs:
       - run:
           name: Add GitHub to known_hosts
           command: |
-            mkdir ~/.ssh
+            mkdir -p ~/.ssh
             touch ~/.ssh/known_hosts
             ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run:
